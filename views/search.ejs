@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/search.css">
+    <title>Search movie</title>
+</head>
+
+<body class="body-s">
+
+    <div class="container-s">
+
+        <div class="container-s">
+            <div class="form-container-s">
+                <form class="form-s" action="/search" method="POST">
+                    <input class="input-s" type="text" name="movieTitle" placeholder="Movie title">
+                    <button class="button-s" type="submit">Search</button>
+                    <button class="button-s"><a href="/">Back</a></button>
+                </form>
+            </div>
+        </div>
+
+        <% if(movieDetails) { %>
+        <div class="result-container">
+            <ul class="movie-data-list">
+                <li><span class="span-s">Title: </span><%= movieDetails.title %></li>
+                <li><span class="span-s">Year: </span><%= movieDetails.year %></li>
+                <li><span class="span-s">Genres: </span><%= movieDetails.genres %></li>
+                <li><span class="span-s">Overview: </span><%= movieDetails.overview %></li>
+            </ul>
+
+            <div class="image-container">
+                <img class="img-s" src="<%= movieDetails.posterUrl %>" alt="">
+            </div>
+        </div>
+        <% } %>
+
+    </div>
+    
+</body>
+</html>
