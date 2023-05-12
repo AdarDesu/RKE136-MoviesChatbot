@@ -91,7 +91,7 @@ app.post("/search", (req, res) => {
     }));
 });
 
-//New route
+// New route:
 app.post('/getmovie', (req, res) => {
 	const movieToSearch =
 		req.body.queryResult && req.body.queryResult.parameters && req.body.queryResult.parameters.movie
